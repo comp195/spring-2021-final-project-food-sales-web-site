@@ -7,6 +7,7 @@ Arthor: Tianxiang Xing, Yifeng Guo, Yu Gao
 Project description: A food-sale website, simulate real saling website. Functionalities includes logging in, searching food, adding desired foods in cart, and making payment.
 
 Project components:   
+Maven， Mybatis
 Front-end : HTML, CSS design, Javascript, XML  
 Back-end： controller mapper model service  
 Database  
