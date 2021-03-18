@@ -10,4 +10,9 @@ public interface UserMapper {
 
     void deleteUser(@Param("userId") Integer userId);
 
+    void updateUser(User user);
+
+    Integer getTotalPage(@Param("userId")Integer userId);
+
+    List<User> page(@Param("offset")Integer offset,@Param("size") Integer size, @Param("userId")Integer userId);
 }
