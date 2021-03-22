@@ -13,7 +13,8 @@ Back-end： controller mapper model service
 Database  
 
 Special notes as needed：  
-Complete:
+Completed:
   Mapper, Database    
         
-Still working on the rest of content！！
+Still working on the rest of content！！  
+More details in snapchat in Wiki page.  
