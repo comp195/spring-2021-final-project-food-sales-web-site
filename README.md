@@ -17,4 +17,5 @@ Completed:
   Mapper, Database    
         
 Still working on the rest of content！！  
-More details in snapchat in Wiki page.  
+More details in Wiki page.  
+Thanks!
