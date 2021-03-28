@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ProductMapper">
+
+    <insert id="addProduct" parameterType="model.Product">
+        insert into product values(null,#{productName}, #{productPrice}, #{productStock}, #{productFileName}, #{productCategoryName}, #{productIsHot}, #{productIsSpecial})
+    </insert>
+
+    <update id="updateProduct" parameterType="model.Product">
+        update product set productName = #{productName}, productPrice = #{productPrice}, productStock = #{productStock},productFileName = #{productFileName}, productCategoryName = #{productCategoryName}, productIsHot = #{productIsHot}, productIsSpecial = #{productIsSpecial} where productId = #{productId}
+    </update>
+
+    <delete id="deleteProduct">
+         delete from product where productId = #{productId}
+    </delete>
+
+    <select id="getTotalPage" resultType="java.lang.Integer">
+        select count(*) from product
+        <where>
+            <if test="productId != null and productId != ''">
+                productId = #{productId}
+            </if>
+        </where>
+    </select>
+
+    <select id="page" resultType="model.Product">
+        select * from product
+        <trim prefixOverrides="and" prefix="where">
+            <if test="productId != null and productId != ''">
+                and productId = #{productId}
+            </if>
+        </trim>
+        limit #{offset},#{size}
+    </select>
+
+    <select id="getProduct" resultType="model.Product">
+        select * from product
+        <trim prefixOverrides="and" prefix="where">
+            <if test="productId != null and productId != ''">
+                and productId = #{productId}
+            </if>
+        </trim>
+    </select>
+
+</mapper>
