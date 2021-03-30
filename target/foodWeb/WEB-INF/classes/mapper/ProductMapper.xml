@@ -2,13 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.ProductMapper">
+<mapper namespace="com.uop.mapper.ProductMapper">
 
-    <insert id="addProduct" parameterType="model.Product">
+    <insert id="addProduct" parameterType="com.uop.model.Product">
         insert into product values(null,#{productName}, #{productPrice}, #{productStock}, #{productFileName}, #{productCategoryName}, #{productIsHot}, #{productIsSpecial})
     </insert>
 
-    <update id="updateProduct" parameterType="model.Product">
+    <update id="updateProduct" parameterType="com.uop.model.Product">
         update product set productName = #{productName}, productPrice = #{productPrice}, productStock = #{productStock},productFileName = #{productFileName}, productCategoryName = #{productCategoryName}, productIsHot = #{productIsHot}, productIsSpecial = #{productIsSpecial} where productId = #{productId}
     </update>
 
@@ -25,7 +25,7 @@
         </where>
     </select>
 
-    <select id="page" resultType="model.Product">
+    <select id="page" resultType="com.uop.model.Product">
         select * from product
         <trim prefixOverrides="and" prefix="where">
             <if test="productId != null and productId != ''">
@@ -35,7 +35,7 @@
         limit #{offset},#{size}
     </select>
 
-    <select id="getProduct" resultType="model.Product">
+    <select id="getProduct" resultType="com.uop.model.Product">
         select * from product
         <trim prefixOverrides="and" prefix="where">
             <if test="productId != null and productId != ''">

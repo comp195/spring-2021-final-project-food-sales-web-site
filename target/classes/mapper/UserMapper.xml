@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.UserMapper">
-    <insert id="registUser" parameterType="model.User">
+<mapper namespace="com.uop.mapper.UserMapper">
+    <insert id="registUser" parameterType="com.uop.model.User">
         insert into user values(null,#{userName},#{password},#{email},#{mobile},#{sex},#{userType})
     </insert>
 
@@ -15,7 +15,7 @@
         delete from user where userId = #{userId}
     </delete>
 
-    <select id="loginUser" resultType="model.User">
+    <select id="loginUser" resultType="com.uop.model.User">
         select * from user where userName = #{userName} and password = #{password}
     </select>
 
@@ -28,7 +28,7 @@
         </where>
     </select>
 
-    <select id="page" resultType="model.User" >
+    <select id="page" resultType="com.uop.model.User" >
         select * from user
         <trim prefixOverrides="and" prefix="where">
             <if test="null != userId and userId !='' ">
