@@ -70,10 +70,10 @@
         }
 
         .listRight h4 span img {
-            width: 30px;
+            width: 50px;
             border-radius: 2px;
             vertical-align: middle;
-            height: 30px;
+            height: 50px;
         }
 
         .listRight h4 span:last-child i:last-child {
