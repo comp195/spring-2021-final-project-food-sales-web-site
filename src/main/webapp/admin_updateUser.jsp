@@ -147,6 +147,13 @@
                 <td><input type="text" name="mobile"></td>
             </tr>
             <tr>
+                <td>Please select Gender</td>
+                <td>
+                    <input type="radio" name="sex" value="male" />Male
+                    <input type="radio" name="sex" value="female" />Female
+                </td>
+            </tr>
+            <tr>
                 <td>Type</td>
                 <td><input type="radio" name="userType" value="buyers" checked/>Buyer</td>
             </tr>
