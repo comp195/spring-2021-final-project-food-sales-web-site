@@ -258,7 +258,7 @@
                 <th>UserName</th>
                 <th>Password</th>
                 <th>Email</th>
-                <th>Phone</th>
+                <th>Mobile</th>
                 <th>Sex</th>
                 <th>Type</th>
                 <th>Operation</th>
