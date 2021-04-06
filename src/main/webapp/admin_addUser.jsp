@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="download/font_2202202_n1xu422uo4/iconfont.css">
-    <title>添加用户</title>
+    <title>Add User</title>
 
     <style>
         * {
