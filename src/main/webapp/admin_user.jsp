@@ -102,8 +102,8 @@
             height: 30px;
             font-size: 12px;
             border-radius: 5px;
-            border: 1px solid #20a0ff;
-            background-color: #20a0ff;
+            border: 1px solid #1c8de0;
+            background-color: #1c8de0;
             color: #fff;
         }
 
