@@ -65,7 +65,7 @@
 
         .listRight h4 span:nth-of-type(1) i {
             font-size: 10px;
-            border: 1px solid skyblue;
+            border: 1px solid #7dbfdb;
             padding: 5px 9px;
             color: #37c8f5;
             border-radius: 4px;
@@ -119,7 +119,7 @@
     <form action="deleteUser?userId=${userId}" method="post">
         <table>
             <tr>
-                <td style="color: red;font-size: 18px">Are you sure to delete？</td>
+                <td style="color: #ff0000;font-size: 18px">Are you sure to delete？</td>
                 <td>
                     <input type="submit" value="Confirm" style="width: 80px;height: 30px">
                     <input type="submit" value="Back" style="width: 80px;height: 30px">
