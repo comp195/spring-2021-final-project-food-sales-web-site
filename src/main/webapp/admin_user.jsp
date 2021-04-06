@@ -259,7 +259,7 @@
                 <th>Password</th>
                 <th>Email</th>
                 <th>Mobile</th>
-                <th>Sex</th>
+                <th>Gender</th>
                 <th>Type</th>
                 <th>Operation</th>
             </tr>
@@ -271,7 +271,7 @@
                     <td>${user.password}</td>
                     <td>${user.email}</td>
                     <td>${user.mobile}</td>
-                    <td>${user.sex}</td>
+                    <td>${user.Gender}</td>
                     <td>${user.userType}</td>
                     <td>
                         <a href="admin_updateUser.jsp?userId=${user.userId}">Edit</a>
