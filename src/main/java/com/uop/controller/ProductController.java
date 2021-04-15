@@ -62,7 +62,6 @@ public class ProductController {
         return "redirect:/productPage";
     }
 
-    //修改分类
     @RequestMapping(value = "/updateProduct")
     public String updateProduct(Product product, MultipartFile file) throws IOException {
         System.out.println(product);
@@ -74,7 +73,6 @@ public class ProductController {
         return "redirect:/productPage?productId=" + product.getProductId();
     }
 
-    //删除分类
     @RequestMapping(value = "/deleteProduct")
     public String updateProduct(Integer productId) {
         productService.deleteProduct(productId);

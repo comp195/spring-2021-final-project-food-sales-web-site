@@ -20,7 +20,6 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    //创建订单
     @RequestMapping(value = "/createOrder")
     public ModelAndView createOrder(Double resultPrice, HttpSession httpSession) {
         String orderNum = GenerateNum.getInstance().GenerateOrder();
@@ -39,7 +38,7 @@ public class OrderController {
         return mv;
     }
 
-    //订单分页
+
     @RequestMapping(value = "/orderPage")
     public ModelAndView orderPage(Integer orderId, Integer current, Model model) {
         Integer total = orderService.getTotalPage(orderId);
@@ -74,7 +73,6 @@ public class OrderController {
         return mv;
     }
 
-    //修改订单状态
     @RequestMapping(value = "/updateOrder")
     public ModelAndView updateOrder(String orderNum) {
         orderService.updateOrder(orderNum);
