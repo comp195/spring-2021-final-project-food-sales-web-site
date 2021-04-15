@@ -170,12 +170,12 @@
 
         .listRight table th:nth-of-type(2),
         .listRight table th:nth-of-type(3) {
-            padding: 0 70px;
+            padding: 0 50px;
         }
 
 
         .listRight table th:nth-of-type(4) {
-            padding: 0 80px;
+            padding: 0 70px;
         }
 
         .listRight table th:nth-of-type(5) {
@@ -271,7 +271,7 @@
                     <td>${user.password}</td>
                     <td>${user.email}</td>
                     <td>${user.mobile}</td>
-                    <td>${user.Gender}</td>
+                    <td>${user.sex}</td>
                     <td>${user.userType}</td>
                     <td>
                         <a href="admin_updateUser.jsp?userId=${user.userId}">Edit</a>
