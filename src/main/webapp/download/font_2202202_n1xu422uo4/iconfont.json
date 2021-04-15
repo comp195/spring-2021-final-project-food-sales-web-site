@@ -1,0 +1,128 @@
+{
+  "id": "2202202",
+  "name": "后台管理系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "字体图标",
+  "glyphs": [
+    {
+      "icon_id": "2305934",
+      "name": "叉叉",
+      "font_class": "closes",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "2743329",
+      "name": "搜索",
+      "font_class": "search",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "5409110",
+      "name": "笔",
+      "font_class": "bi",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "8381582",
+      "name": "小猫",
+      "font_class": "xiaomao",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "5979845",
+      "name": "下箭头",
+      "font_class": "arrow-up1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "6446205",
+      "name": "下箭头",
+      "font_class": "icon1",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "439499",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "663948",
+      "name": "简述",
+      "font_class": "jianshu",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "3017792",
+      "name": "操作日志",
+      "font_class": "caozuorizhi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "3582972",
+      "name": "下箭头",
+      "font_class": "dowm",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "4049704",
+      "name": "角色组管理",
+      "font_class": "jiaosezuguanli",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "5046275",
+      "name": "三",
+      "font_class": "san",
+      "unicode": "e7ff",
+      "unicode_decimal": 59391
+    },
+    {
+      "icon_id": "5297717",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "5969561",
+      "name": "上箭头",
+      "font_class": "up",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "10742736",
+      "name": "角色管理",
+      "font_class": "jiaoseguanli",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "14386612",
+      "name": "全屏",
+      "font_class": "quanping",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "14982832",
+      "name": "设 置",
+      "font_class": "shezhi",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

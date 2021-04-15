@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uop.mapper.OrderMapper">
+
+    <insert id="addOrder" parameterType="com.uop.model.Order">
+        insert into t_order values(null,#{orderNumber},#{orderPrice},#{orderStatus})
+    </insert>
+
+    <update id="updateOrder">
+        update t_order set orderStatus = 1 where orderNumber = #{orderNumber}
+    </update>
+
+    <select id="page" resultType="com.uop.model.Order">
+        select * from t_order
+        <trim prefixOverrides="and" prefix="where">
+            <if test="orderId != null and orderId != ''">
+                and orderId = #{orderId}
+            </if>
+        </trim>
+        limit #{offset},#{size}
+    </select>
+
+    <select id="getOrder" resultType="com.uop.model.Order">
+        select * from t_order
+        <trim prefixOverrides="and" prefix="where">
+            <if test="orderId != null and orderId != ''">
+                and orderId = #{orderId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getTotalPage" resultType="java.lang.Integer">
+        select count(*) from t_order
+        <where>
+            <if test="orderId != null and orderId != ''">
+                orderId = #{orderId}
+            </if>
+        </where>
+    </select>
+
+</mapper>
