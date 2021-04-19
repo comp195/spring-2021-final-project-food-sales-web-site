@@ -122,7 +122,7 @@
         	<span class="fl">Hello,Please <a href="login.jsp">
                  <c:if test="${user == null}">Log in </c:if>
                 <c:if test="${user != null}">${user}</c:if>
-            </a>&nbsp;&nbsp; <a href="Regist.html" style="color:#ff4e00;">Sign in</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
+            </a>&nbsp;&nbsp; <a href="regist.jsp" style="color:#ff4e00;">Free to register</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">Watch List</a>

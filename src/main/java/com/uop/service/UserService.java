@@ -18,6 +18,10 @@ public class UserService {
         userMapper.registUser(user);
     }
 
+    public void registerUser(User user){
+        userMapper.registUser(user);
+    }
+
     public User loginUser(String userName, String password){
         User user = userMapper.loginUser(userName,password);
         return user;

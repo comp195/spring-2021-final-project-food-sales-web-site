@@ -20,6 +20,12 @@ public class UserController {
         return "redirect:/userPage";
     }
 
+    @RequestMapping(value = "/register")
+    public ModelAndView registerUser(User user){
+        userService.registUser(user);
+        return new ModelAndView("success");
+    }
+
     @RequestMapping(value = "/login")
     public ModelAndView login(String userName, String password){
         User user = userService.loginUser(userName, password);

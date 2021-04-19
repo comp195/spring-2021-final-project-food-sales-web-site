@@ -52,13 +52,13 @@
 	<div class="regist">
     	<div class="log_img"><img src="images/l_img.png" width="611" height="425" /></div>
 		<div class="reg_c">
-        	<form action="/ebuy/regist" method="post">
+        	<form action="register" method="post">
             <table border="0" style="width:420px; font-size:14px; margin-top:20px;" cellspacing="0" cellpadding="0">
               <tr height="50" valign="top">
               	<td width="95">&nbsp;</td>
                 <td>
                 	<span class="fl" style="font-size:24px;">Register</span>
-                    <span class="fr">Already signed in，<a href="login.jsp" style="color:#ff4e00;">Log in</a></span>
+                    <span class="fr">Already signed in,<a href="login.jsp" style="color:#ff4e00;">Log in</a></span>
                 </td>
               </tr>
               <tr height="50">
@@ -101,13 +101,6 @@
                     <input type="radio" name="userType" value="admin"/> Admin
                 </td>
               </tr>
-              <tr height="50">
-                <td align="right"> <font color="#ff4e00">*</font>&nbsp;Verification Code &nbsp;</td>
-                <td>
-                    <input type="text" value="" class="l_ipt" />
-                    <a href="#" style="font-size:12px; font-family:'';">Change another one</a>
-                </td>
-              </tr>
               <tr>
               	<td></td>
                 <td style="font-size:12px; padding-top:5px">
@@ -118,7 +111,7 @@
               </tr>
               <tr height="60">
               	<td>&nbsp;</td>
-                <td><input type="submit" value="???立即注册" class="log_btn" /></td>
+                <td><input type="submit" value="Register Now" class="log_btn" /></td>
               </tr>
             </table>
             </form>
