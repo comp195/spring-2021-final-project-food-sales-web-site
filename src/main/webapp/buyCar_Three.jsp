@@ -108,7 +108,7 @@
         </span>
         <!--End DELIVER AREA End-->
         <span class="fr">
-        	<span class="fl"> <a href="Login.html">Log in</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">Sign in</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
+        	<span class="fl"> <a href="login.jsp">Log in</a>&nbsp; <a href="regist.jsp" style="color:#ff4e00;">Sign in</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">Watch List</a>
@@ -142,7 +142,7 @@
     </div>
 </div>
 <div class="top">
-    <div class="logo"><a href="Index.html"><img src="images/logo.png" /></a></div>
+    <div class="logo"><a href="index.jsp"><img src="images/logo.png" /></a></div>
     <div class="search">
         <form>
             <input type="text" value="" class="s_ipt" />
@@ -154,7 +154,7 @@
         <div class="car_t">Cart [ <span>3</span> ]</div>
         <div class="car_bg">
             <!--Begin Cart not login Begin-->
-            <div class="un_login">Not login！<a href="Login.html" style="color:#ff4e00;">Login now</a> to Check Cart！</div>
+            <div class="un_login">Not login！<a href="login.jsp" style="color:#ff4e00;">Login now</a> to Check Cart！</div>
             <!--End Cart not log in End-->
             <!--Begin Cart Log in Begin-->
             <ul class="cars">

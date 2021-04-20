@@ -40,7 +40,7 @@
         <span class="fr">
         	<span class="fl">Hello，Please <a href="login.jsp">sign in</a>&nbsp; <a href="regist.jsp" style="color:#ff4e00;"> register</a>&nbsp; </span>
 
-            <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="images/s_tel.png" align="absmiddle" /></a></span>
+            <span class="fr">|&nbsp;<a href="#">Phone&nbsp;<img src="images/s_tel.png" align="absmiddle" /></a></span>
         </span>
     </div>
 </div>

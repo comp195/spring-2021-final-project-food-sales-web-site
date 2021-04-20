@@ -184,24 +184,23 @@
             <!--End Cart not log in End-->
             <!--Begin Cart Log in Begin-->
             <ul class="cars">
-                <li>
-                    <div class="img"><a href="#"><img src="images/cart1.jpeg" width="58" height="58"/></a></div>
-                    <div class="name"><a href="#">Lindt Truffles Milk Chocolate Bag, 5.1 Oz</a></div>
-                    <div class="price"><font color="#ff4e00">$3.78</font> X1</div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/cart2.jpeg" width="58" height="58"/></a></div>
-                    <div class="name"><a href="#">Premium Cooked Cocktail Shrimp, Tail-On Thaw and Serve, 51-60 pcs, 16
-                        oz</a></div>
-                    <div class="price"><font color="#ff4e00">$8.98</font> X1</div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/cart3.png" width="58" height="58"/></a></div>
-                    <div class="name"><a href="#">Pillsbury Soft Baked Cookies Confetti, 18 ct</a></div>
-                    <div class="price"><font color="#ff4e00">$2.98</font> X1</div>
-                </li>
+                <c:set var="result" value="${0}"/>
+                <c:forEach items="${productList}" var="product" varStatus="varStatus">
+                    <c:forEach items="${orderProductList}" var="orderProduct" varStatus="varStatus">
+                        <c:if test="${product.productId == orderProduct.productId}">
+                            <li>
+                                <div class="img"><a href="#"><img src="img/${product.productFileName}" width="58"
+                                                                  height="58"/></a></div>
+                                <div class="name"><a href="#">${product.productName}</a></div>
+                                <div class="price"><font color="#ff4e00">￥${product.productPrice}</font>
+                                    X ${orderProduct.productCount}</div>
+                            </li>
+                            <c:set var="result" value="${result + product.productPrice*orderProduct.productCount}"/>
+                        </c:if>
+                    </c:forEach>
+                </c:forEach>
             </ul>
-            <div class="price_sum">Total&nbsp; <font color="#ff4e00">$</font><span>15.74</span></div>
+            <div class="price_sum">Total&nbsp; <font color="#ff4e00">￥</font><span>${result}</span></div>
             <div class="price_a"><a href="#">Place the Order</a></div>
             <!--End Cart Login End-->
         </div>
@@ -216,38 +215,34 @@
             <div class="nav_t">Category</div>
             <div class="leftNav">
                 <ul>
-                    <li>
-                        <div class="fj">
-                            <span class="n_img"><span></span><img src="images/nav1.jpeg"/></span>
-                            <span class="fl"></span>
-                        </div>
-                        <div class="zj">
-                            <div class="zj_l">
-                                <div class="zj_l_c">
-
+                    <c:forEach items="${firstCategory}" var="categoryId" varStatus="varStatus">
+                        <li>
+                            <div class="fj">
+                                <span class="n_img"><span></span><img src="images/nav${varStatus.count}.png"/></span>
+                                <span class="fl">${categoryId.categoryName}</span>
+                            </div>
+                            <div class="zj" style="top:-${(varStatus.count-1)*40}px;">
+                                <div class="zj_l">
+                                    <c:forEach items="${secondCategory}" var="categoryName" varStatus="varStatus">
+                                        <c:if test="${categoryName.parentId == categoryId.categoryId}">
+                                            <div class="zj_l_c">
+                                                <h2>${categoryName.categoryName}</h2>
+                                                <c:forEach items="${productList}" var="product" varStatus="varStatus">
+                                                    <c:if test="${product.productCategoryName == categoryName.categoryName}">
+                                                        <a href="product?productId=${product.productId}">${product.productName}</a>
+                                                    </c:if>
+                                                </c:forEach>
+                                            </div>
+                                        </c:if>
+                                    </c:forEach>
                                 </div>
-                                <div class="zj_l_c">
-
-                                </div>
-                                <div class="zj_l_c">
-
-                                </div>
-                                <div class="zj_l_c">
-
-                                </div>
-                                <div class="zj_l_c">
-
-                                </div>
-                                <div class="zj_l_c">
-
+                                <div class="zj_r">
+                                    <a href="#"><img src="images/n_img1.jpg" width="236" height="200"/></a>
+                                    <a href="#"><img src="images/n_img2.jpg" width="236" height="200"/></a>
                                 </div>
                             </div>
-                            <div class="zj_r">
-                                <a href="#"><img src="images/n_img1.jpeg" width="236" height="200"/></a>
-                                <a href="#"><img src="images/n_img2.jpeg" width="236" height="200"/></a>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    </c:forEach>
 
                     <li>
                         <div class="fj">
@@ -332,23 +327,24 @@
                     <div id="block">
                         <div id="botton-scroll">
                             <ul class="featureUL">
+                                <c:forEach items="${productList}" var="product" varStatus="productsVarStatus">
+                                <c:if test="${product.productIsHot == true}">
                                 <li class="featureBox">
                                     <div class="box">
                                         <div class="h_icon"><img src="images/hot.jpeg" width="50" height="50"/></div>
                                         <div class="imgbg">
-                                            <a href="#"><img src="images/hot1.jpeg" width="160" height="136"/></a>
-                                        </div>
-                                        <div class="name">
-                                            <a href="#">
-                                                <h2>Party Size</h2>
-                                                Lay's Classic Potato Chips
-                                            </a>
+                                            <a href="product?productId=${product.productId}"><img
+                                                    src="img/${product.productFileName}" width="160"
+                                                    height="136"/></a>
                                         </div>
                                         <div class="price">
-                                            <font>$<span>6.32</span></font> &nbsp; 26R
+                                            <font>￥<span>${product.productPrice}</span></font>
+                                            &nbsp; ${product.productStock}R
                                         </div>
                                     </div>
                                 </li>
+                                </c:if>
+                                </c:forEach>
 
                             </ul>
                         </div>
@@ -377,24 +373,46 @@
             </div>
         </div>
         <div class="sell_right">
-            <div class="sell_1">
-                <div class="s_img"><a href="#"><img src="images/tm_1.jpeg" width="185" height="155"/></a></div>
-                <div class="s_price">$<span>2.83</span></div>
-                <div class="s_name">
-                    <h2><a href="#">White Grade AA Eggs</a></h2>
-                    <span>1</span> H <span>30</span> Min <span>28</span> Sec
-                </div>
-            </div>
-
+            <c:set var="k" value="${1}"/>
+            <c:forEach items="${productList}" var="product" varStatus="productsVarStatus">
+                <c:if test="${product.productIsSpecial == true && k<=6}">
+                    <div class="sell_${k}">
+                        <c:if test="${k<=4}">
+                            <div class="s_img"><a href="product?productId=${product.productId}"><img
+                                    src="img/${product.productFileName}" width="185" height="155"/></a>
+                            </div>
+                        </c:if>
+                        <c:if test="${k>4}">
+                            <div class="sb_img"><a href="product?productId=${product.productId}"><img
+                                    src="img/${product.productFileName}" width="242" height="356"/></a>
+                            </div>
+                        </c:if>
+                        <div class="s_price">￥<span>${product.productPrice}</span></div>
+                        <div class="s_name">
+                            <h2><a href="product?productId=${product.productId}">${product.productName}</a></h2>
+                            Count down：<span>1200</span> H <span>30</span> Min <span>28</span> Sec
+                        </div>
+                    </div>
+                    <c:set var="k" value="${k+1}"/>
+                </c:if>
+            </c:forEach>
         </div>
     </div>
     <!--End Limited time End-->
     <!--Begin Fresh Begin-->
+    <c:set var="i" value="${1}"/>
+    <c:forEach items="${firstCategory}" var="categoryId" varStatus="varStatus">
+    <c:if test="${varStatus.count < 6 || varStatus.count > 8}">
     <div class="i_t mar_10">
-        <span class="floor_num">1F</span>
-        <span class="fl">Imported Food <b>·</b> Fresh</span>
-        <span class="i_mores fr"><a href="#">Coffee</a>&nbsp; &nbsp; &nbsp; <a href="#">Alcohol</a>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <a
-                href="#">Fresh Vege</a>&nbsp; &nbsp; &nbsp; <a href="#">Fresh Fruit</a></span>
+        <span class="floor_num">${i}F</span>
+        <span class="fl">${categoryId.categoryName}</span>
+        <span class="i_mores fr">
+                    <c:forEach items="${secondCategory}" var="categoryName" varStatus="varStatus">
+                        <c:if test="${categoryName.parentId == categoryId.categoryId}">
+                            <a href="#">${categoryName.categoryName}</a>&nbsp; &nbsp; &nbsp;
+                        </c:if>
+                    </c:forEach>
+                </span>
     </div>
     <div class="content">
         <div class="fresh_left">
@@ -405,27 +423,46 @@
                         <li><a href="#"><img src="images/fre_r.jpg" width="211" height="286"/></a></li>
                         <li><a href="#"><img src="images/fre_r.jpg" width="211" height="286"/></a></li>
                     </ul>
-                    <div class="prevf">Last page</div>
-                    <div class="nextf">Next page</div>
+                    <div class="prevf">Before</div>
+                    <div class="nextf">After</div>
                 </div>
             </div>
             <div class="fresh_txt">
                 <div class="fresh_txt_c">
-                    <a href="#">Imported fruit</a><a href="#">Kiwi fruit</a><a href="#">Grapefruit</a><a href="#">Seafood</a><a
-                        href="#">Beef</a><a href="#">Milk powder</a><a href="#">Eggs</a><a href="#">Alcohol</a>
+                    <c:forEach items="${secondCategory}" var="categoryName" varStatus="varStatus">
+                        <c:if test="${categoryName.parentId == categoryId.categoryId}">
+                            <a href="#">${categoryName.categoryName}</a>
+                        </c:if>
+                    </c:forEach>
                 </div>
             </div>
         </div>
         <div class="fresh_mid">
             <ul>
-                <li>
-                    <div class="name"><a href="#">Fresh Food</a></div>
-                    <div class="price">
-                        <font>$<span>0</span></font> &nbsp; 26R
-                    </div>
-                    <div class="img"><a href="#"><img src="images/fre_1.jpg" width="185" height="155"/></a></div>
-                </li>
-
+                <c:forEach items="${secondCategory}" var="categoryName" varStatus="categoryNamesVarStatus">
+                    <c:if test="${categoryName.parentId == categoryId.categoryId}">
+                        <c:set var="j" value="${1}"/>
+                        <c:forEach items="${productList}" var="product" varStatus="productsVarStatus">
+                            <c:if test="${product.productCategoryName == categoryName.categoryName && i<=6}">
+                                <li>
+                                    <div class="name"><a
+                                            href="product?productId=${product.productId}">${product.productName}</a>
+                                    </div>
+                                    <div class="price">
+                                        <font>￥<span>${product.productPrice}</span></font>
+                                        &nbsp; ${product.productStock}R
+                                    </div>
+                                    <div class="img"><a href="product?productId=${product.productId}"><img
+                                            src="${pageContext.request.contextPath}/img/${product.productFileName}"
+                                            width="185"
+                                            height="155"/></a>
+                                    </div>
+                                </li>
+                                <c:set var="j" value="${j+1}"/>
+                            </c:if>
+                        </c:forEach>
+                    </c:if>
+                </c:forEach>
             </ul>
         </div>
         <div class="fresh_right">
@@ -435,6 +472,9 @@
             </ul>
         </div>
     </div>
+        <c:set var="i" value="${i+1}"/>
+    </c:if>
+    </c:forEach>
 
     <div class="content mar_20">
         <img src="images/mban_1.jpg" width="1200" height="110"/>

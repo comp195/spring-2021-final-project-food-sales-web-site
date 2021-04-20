@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="admin/download/font_2202202_n1xu422uo4/iconfont.css">
-    <title>Category management</title>
 
     <style>
         * {
@@ -222,7 +223,7 @@
 <div class="listRight">
     <h4>
         <i class="iconfont iconsan"></i>
-        <span>首页 <em>/</em> Basic management <i class="iconfont">Category management&#xe608</i></span>
+        <span>Index <em>/</em> Setting <i class="iconfont">Category management &#xe608</i></span>
 
         <span>
                 <i class="iconfont iconquanping"></i>
@@ -233,7 +234,7 @@
     <form action="" method="post">
         <input type="text" name="parentId" id="parentId" placeholder="Enter your category number" />
         <button  class="iconfont iconsearch" onclick="queryByCondition()"> Search</button>
-        <button class="iconfont iconbi" id="add"><a href="admin_addCategory.jsp" style="color: white"> Add</a></button>
+        <button class="iconfont iconbi" id="add"><a href="admin_addCategory.jsp" style="color: white"> add</a></button>
 
         <table>
             <tr>
@@ -260,14 +261,14 @@
 
         <div style="margin-top: 10px">
             <div style="display: inline-block;height: 50px;line-height: 50px;margin-left: 20px">
-                <span>This is ${current}/${totalPage}page，total${total}records</span>
-                <a href="categoryPage?current=1&parentId=${parentId}">首页</a>
-                <a href="categoryPage?current=${current - 1}&parentId=${parentId}">上一页</a>
-                <a href="categoryPage?current=${current + 1}&parentId=${parentId}">下一页</a>
-                <a href="categoryPage?current=${totalPage}&parentId=${parentId}">尾页</a>
+                <span>Current:${current}/${totalPage}，${total}</span>
+                <a href="categoryPage?current=1&parentId=${parentId}">First</a>
+                <a href="categoryPage?current=${current - 1}&parentId=${parentId}">Before</a>
+                <a href="categoryPage?current=${current + 1}&parentId=${parentId}">Next</a>
+                <a href="categoryPage?current=${totalPage}&parentId=${parentId}">Last</a>
             </div>
             <div style="float: right;margin-top: -5px">
-                <span style="margin-right: -10px">Jump to</span>
+                <span style="margin-right: -10px">Go to</span>
                 <input type="text" name="jumpPageNo" id="jumpPageNo" style="width: 28px;height: 28px">
                 <button onclick="jumpToPage()" style="margin:0">Go</button>
             </div>
