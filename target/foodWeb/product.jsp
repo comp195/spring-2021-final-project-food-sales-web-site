@@ -119,7 +119,7 @@
         </span>
         <!--End DELIVER AREA End-->
         <span class="fr">
-        	<span class="fl"> <a href="Login.html">Log in</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">Sign up</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
+        	<span class="fl"> <a href="login.jsp">Log in</a>&nbsp; <a href="regist.jsp" style="color:#ff4e00;">Sign up</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">Watch List</a>

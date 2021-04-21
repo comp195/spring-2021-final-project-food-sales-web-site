@@ -108,7 +108,7 @@
         </span>
         <!--End DELIVER AREA End-->
         <span class="fr">
-        	<span class="fl"> <a href="Login.html">Log in</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">Sign in</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
+        	<span class="fl"> <a href="login.jsp">Log in</a>&nbsp; <a href="regist.jsp" style="color:#ff4e00;">Sign in</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">Watch List</a>
@@ -138,7 +138,7 @@
 
             </span>
             <span class="fl">|&nbsp;Follow us：</span>
-            <span class="s_sh"><a href="#" class="sh1">Twitter</a><a href="#" class="sh2">Facabook</a></span>
+            <span class="s_sh"><a href="#" class="sh1">Twitter</a><a href="#" class="sh2">Facebook</a></span>
     </div>
 </div>
 <div class="top">

@@ -245,21 +245,7 @@
                     </c:forEach>
 
                     <li>
-                        <div class="fj">
-                            <span class="n_img"><span></span><img src="images/nav10.jpeg"/></span>
-                            <span class="fl"></span>
-                        </div>
-                        <div class="zj" style="top:-360px;">
-                            <div class="zj_l">
-                                <div class="zj_l_c">
 
-                                </div>
-                            </div>
-                            <div class="zj_r">
-                                <a href="#"><img src="images/n_img1.jpg" width="236" height="200"/></a>
-                                <a href="#"><img src="images/n_img2.jpg" width="236" height="200"/></a>
-                            </div>
-                        </div>
                     </li>
                 </ul>
             </div>

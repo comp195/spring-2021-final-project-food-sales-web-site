@@ -20,9 +20,9 @@
     </bean>
 
     <mvc:resources mapping="/css/**" location="/css/"/>
-<!--    <mvc:resources mapping="/img/**" location="/img/"/>-->
+    <mvc:resources mapping="/img/**" location="/img/"/>
     <mvc:resources mapping="/images/**" location="/images/"/>
-<!--    <mvc:resources mapping="/**/*.css" location="/"/>-->
+    <mvc:resources mapping="/**/*.css" location="/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
 
 
