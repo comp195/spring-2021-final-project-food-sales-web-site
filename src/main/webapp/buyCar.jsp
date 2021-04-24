@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -108,7 +110,10 @@
         </span>
         <!--End DELIVER AREA End-->
         <span class="fr">
-        	<span class="fl"> <a href="login.jsp">Log in</a>&nbsp; <a href="regist.jsp" style="color:#ff4e00;">Sign in</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
+        	<span class="fl"> <a href="login.jsp">
+                <c:if test="${user == null}">Log in</c:if>
+                <c:if test="${user != null}">${user}</c:if>
+            </a>&nbsp; <a href="regist.jsp" style="color:#ff4e00;">Sign in</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">Watch List</a>
@@ -139,10 +144,11 @@
             </span>
             <span class="fl">|&nbsp;Follow us：</span>
             <span class="s_sh"><a href="#" class="sh1">Twitter</a><a href="#" class="sh2">Facebook</a></span>
+        </span>
     </div>
 </div>
 <div class="top">
-    <div class="logo"><a href="Index.html"><img src="images/logo.png" /></a></div>
+    <div class="logo"><a href="indexInfo.jsp"><img src="images/logo.png" /></a></div>
     <div class="search">
         <form>
             <input type="text" value="" class="s_ipt" />
@@ -151,30 +157,35 @@
         <span class="fl"><a href="#">Coffee</a><a href="#">Juice</a><a href="#">Fresh Food</a><a href="#">Cake</a><a href="#">Women</a><a href="#">Men</a></span>
     </div>
     <div class="i_car">
-        <div class="car_t">Cart [ <span>3</span> ]</div>
+        <div class="car_t">Cart</div>
         <div class="car_bg">
             <!--Begin Cart not login Begin-->
-            <div class="un_login">Not login！<a href="Login.html" style="color:#ff4e00;">Login now</a> to Check Cart！</div>
+            <div class="un_login"><a href="login.jsp" style="color:#ff4e00;">
+                <c:if test="${user == null}">Not login！ Login now</c:if>
+                    <c:if test="${user != null}">${user}</c:if>
+                  </a> to Check Cart！</div>
             <!--End Cart not log in End-->
             <!--Begin Cart Log in Begin-->
             <ul class="cars">
-                <li>
-                    <div class="img"><a href="#"><img src="images/cart1.jpeg" width="58" height="58" /></a></div>
-                    <div class="name"><a href="#">Lindt Truffles Milk Chocolate Bag, 5.1 Oz</a></div>
-                    <div class="price"><font color="#ff4e00">$3.78</font> X1</div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/cart2.jpeg" width="58" height="58" /></a></div>
-                    <div class="name"><a href="#">Premium Cooked Cocktail Shrimp, Tail-On Thaw and Serve, 51-60 pcs, 16 oz</a></div>
-                    <div class="price"><font color="#ff4e00">$8.98</font> X1</div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="images/cart3.png" width="58" height="58" /></a></div>
-                    <div class="name"><a href="#">Pillsbury Soft Baked Cookies Confetti, 18 ct</a></div>
-                    <div class="price"><font color="#ff4e00">$2.98</font> X1</div>
-                </li>
+                <c:set var="result" value="${0}"/>
+                <c:forEach items="${productList}" var="product" varStatus="varStatus">
+                    <c:forEach items="${orderProductList}" var="orderProduct" varStatus="varStatus">
+                        <c:if test="${product.productId == orderProduct.productId}">
+                            <li>
+                                <div class="img"><a href="#"><img src="img/${product.productFileName}" width="58"
+                                                                  height="58"/></a></div>
+                                <div class="name"><a href="#">${product.productName}</a></div>
+                                <div class="price"><font color="#ff4e00">￥${product.productPrice}</font>
+                                    X ${orderProduct.productCount}</div>
+                            </li>
+                            <c:set var="result" value="${result+orderProduct.productCost*orderProduct.productCount}"/>
+                        </c:if>
+
+                    </c:forEach>
+                </c:forEach>
             </ul>
-            <div class="price_sum">Total&nbsp; <font color="#ff4e00">$</font><span>15.74</span></div>
+
+            <div class="price_sum">Total&nbsp; <font color="#ff4e00">$</font><span>${result}</span></div>
             <div class="price_a"><a href="#">Place the Order</a></div>
             <!--End Cart Login End-->
         </div>
@@ -190,33 +201,34 @@
             <div class="leftNav none">
                 <ul>
                     <c:forEach items="${firstCategory}" var="categoryId" varStatus="varStatus">
-                        <li>
-                            <div class="fj">
-                                <span class="n_img"><span></span><img src="images/nav${varStatus.count}.png"/></span>
-                                <span class="fl">${categoryId.categoryName}</span>
+                    <li>
+                        <div class="fj">
+                            <span class="n_img"><span></span><img src="images/nav${varStatus.count}.png"/></span>
+                            <span class="fl">${categoryId.categoryName}</span>
+                        </div>
+                        <div class="zj" style="top:-${(varStatus.count-1)*40}px;">
+                            <div class="zj_l">
+                                <c:forEach items="${secondCategory}" var="categoryName" varStatus="varStatus">
+                                    <c:if test="${categoryName.parentId == categoryId.categoryId}">
+                                        <div class="zj_l_c">
+                                            <h2>${categoryName.categoryName}</h2>
+                                            <c:forEach items="${productList}" var="product" varStatus="varStatus">
+                                                <c:if test="${product.productCategoryName == categoryName.categoryName}">
+                                                    <a href="index?productId=${product.productId}">${product.productName}</a>
+                                                </c:if>
+                                            </c:forEach>
+                                        </div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
-                            <div class="zj" style="top:-${(varStatus.count-1)*40}px;">
-                                <div class="zj_l">
-                                    <c:forEach items="${secondCategory}" var="categoryName" varStatus="varStatus">
-                                        <c:if test="${categoryName.parentId == categoryId.categoryId}">
-                                            <div class="zj_l_c">
-                                                <h2>${categoryName.categoryName}</h2>
-                                                <c:forEach items="${productList}" var="product" varStatus="varStatus">
-                                                    <c:if test="${product.productCategoryName == categoryName.categoryName}">
-                                                        <a href="index?productId=${product.productId}">${product.productName}</a>
-                                                    </c:if>
-                                                </c:forEach>
-                                            </div>
-                                        </c:if>
-                                    </c:forEach>
-                                </div>
-                                <div class="zj_r">
-                                    <a href="#"><img src="images/n_img1.jpg" width="236" height="200"/></a>
-                                    <a href="#"><img src="images/n_img2.jpg" width="236" height="200"/></a>
-                                </div>
+                            <div class="zj_r">
+                                <a href="#"><img src="images/n_img1.jpg" width="236" height="200"/></a>
+                                <a href="#"><img src="images/n_img2.jpg" width="236" height="200"/></a>
                             </div>
-                        </li>
+                        </div>
+                    </li>
                     </c:forEach>
+
                     <li>
                         <div class="fj">
                             <span class="n_img"><span></span><img src="images/nav10.png"/></span>
@@ -311,7 +323,7 @@
                 <td colspan="6" style="font-family:'Microsoft YaHei'; border-bottom:0;">
                     <label class="r_rad"><input type="checkbox" name="clear" checked="checked"/></label><label
                         class="r_txt">Clear cart</label>
-                    <span class="fr">Total：<b style="font-size:22px; color:#ff4e00;">￥${result}</b></span>
+                    <span class="fr">Total：<b style="font-size:22px; color:#ff4e00;">$${result}</b></span>
                 </td>
             </tr>
             <tr valign="top" height="150">

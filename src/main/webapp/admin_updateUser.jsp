@@ -127,27 +127,27 @@
     <form action="updateUser?userId=${userId}" method="post">
         <table style="margin: 10px 0">
             <tr>
-                <td>Please Enter the userName</td>
+                <td>Enter the userName</td>
                 <td><input type="text" name="newUserName"></td>
             </tr>
             <tr>
-                <td>Please enter the new password</td>
+                <td>Enter the new password</td>
                 <td><input type="password" name="password"></td>
             </tr>
             <tr>
-                <td>Please confirm the password</td>
+                <td>Confirm the password</td>
                 <td><input type="password" name="repassword"></td>
             </tr>
             <tr>
-                <td>Please enter the new email</td>
+                <td>Enter the new email</td>
                 <td><input type="text" name="email"></td>
             </tr>
             <tr>
-                <td>Please enter the new mobile number</td>
+                <td>Enter the new mobile</td>
                 <td><input type="text" name="mobile"></td>
             </tr>
             <tr>
-                <td>Please select Gender</td>
+                <td>Select Gender</td>
                 <td>
                     <input type="radio" name="Gender" value="male" />Male
                     <input type="radio" name="Gender" value="female" />Female

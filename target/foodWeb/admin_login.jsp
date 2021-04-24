@@ -137,12 +137,12 @@
     //单击商品管理加载内容
     $(".listLeft ul li:nth-of-type(2)").click(function () {
         //    $(".listRigght iframe").removeAttr("src");
-        $("iframe").attr('src', 'productPage');
+        $("iframe").attr('src', 'categoryPage');
     });
     //单击商品分类管理加载内容
     $(".listLeft ul li:nth-of-type(3)").click(function () {
         //    $(".listRigght iframe").removeAttr("src");
-        $("iframe").attr('src', 'categoryPage');
+        $("iframe").attr('src', 'productPage');
         // $("iframe").location.href = "/ebuy/category";
     });
     //单击订单管理加载内容

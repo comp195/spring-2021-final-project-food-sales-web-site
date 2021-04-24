@@ -276,7 +276,7 @@
                         <c:if test="${product.productIsSpecial == false}"> false </c:if>
                     </td>
                     <td class="update">
-                        <a href="admin_updateProduct.jsp?productId=${product.productId}">Submit</a>
+                        <a href="admin_updateProduct.jsp?productId=${product.productId}">Edit</a>
                         <a href="deleteProduct?productId=${product.productId}">delete</a>
                     </td>
                 </tr>

@@ -119,7 +119,7 @@
         </span>
     <!--End DELIVER AREA End-->
     <span class="fr">
-        	<span class="fl"> <a href="Login.html">Log in</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">Sign up</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
+        	<span class="fl"> <a href="login.jsp">Log in</a>&nbsp; <a href="regist.jsp" style="color:#ff4e00;">Sign up</a>&nbsp;|&nbsp;<a href="#">Orders</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">Watch List</a>
@@ -150,10 +150,11 @@
             </span>
             <span class="fl">|&nbsp;Follow us：</span>
             <span class="s_sh"><a href="#" class="sh1">Twitter</a><a href="#" class="sh2">Facabook</a></span>
+    </span>
   </div>
 </div>
 <div class="top">
-  <div class="logo"><a href="Index.html"><img src="images/logo.png" /></a></div>
+  <div class="logo"><a href="index.jsp"><img src="images/logo.png" /></a></div>
   <div class="search">
     <form>
       <input type="text" value="" class="s_ipt" />
@@ -162,31 +163,35 @@
     <span class="fl"><a href="#">Coffee</a><a href="#">Juice</a><a href="#">Fresh Food</a><a href="#">Cake</a><a href="#">Women</a><a href="#">Men</a></span>
   </div>
   <div class="i_car">
-    <div class="car_t">Cart [ <span>3</span> ]</div>
+    <div class="car_t">Cart</div>
     <div class="car_bg">
       <!--Begin Cart not login Begin-->
-      <div class="un_login">Not login！<a href="Login.html" style="color:#ff4e00;">Login now</a> to Check Cart！</div>
+      <div class="un_login"><a href="login.jsp" style="color:#ff4e00;">
+        <c:if test="${user == null}">Not Login in！Login in now</c:if>
+        <c:if test="${user != null}">${user}</c:if>
+      </a> Check to Cart！
+      </div>
       <!--End Cart not log in End-->
       <!--Begin Cart Log in Begin-->
       <ul class="cars">
-        <li>
-          <div class="img"><a href="#"><img src="images/cart1.jpeg" width="58" height="58" /></a></div>
-          <div class="name"><a href="#">Lindt Truffles Milk Chocolate Bag, 5.1 Oz</a></div>
-          <div class="price"><font color="#ff4e00">$3.78</font> X1</div>
-        </li>
-        <li>
-          <div class="img"><a href="#"><img src="images/cart2.jpeg" width="58" height="58" /></a></div>
-          <div class="name"><a href="#">Premium Cooked Cocktail Shrimp, Tail-On Thaw and Serve, 51-60 pcs, 16 oz</a></div>
-          <div class="price"><font color="#ff4e00">$8.98</font> X1</div>
-        </li>
-        <li>
-          <div class="img"><a href="#"><img src="images/cart3.png" width="58" height="58" /></a></div>
-          <div class="name"><a href="#">Pillsbury Soft Baked Cookies Confetti, 18 ct</a></div>
-          <div class="price"><font color="#ff4e00">$2.98</font> X1</div>
-        </li>
+        <c:set var="result" value="${0}"/>
+        <c:forEach items="${productList}" var="product" varStatus="varStatus">
+          <c:forEach items="${orderProductList}" var="orderProduct" varStatus="varStatus">
+            <c:if test="${product.productId == orderProduct.productId}">
+              <li>
+                <div class="img"><a href="#"><img src="img/${product.productFileName}" width="58"
+                                                  height="58"/></a></div>
+                <div class="name"><a href="#">${product.productName}</a></div>
+                <div class="price"><font color="#ff4e00">￥${product.productPrice}</font>
+                  X ${orderProduct.productCount}</div>
+              </li>
+              <c:set var="result" value="${result+orderProduct.productCost*orderProduct.productCount}"/>
+            </c:if>
+          </c:forEach>
+        </c:forEach>
       </ul>
-      <div class="price_sum">Total&nbsp; <font color="#ff4e00">$</font><span>15.74</span></div>
-      <div class="price_a"><a href="#">Place the Order</a></div>
+      <div class="price_sum">Total&nbsp; <font color="#ff4e00">$</font><span>${result}</span></div>
+      <div class="price_a"><a href="buyCar.jsp">Place the Order</a></div>
       <!--End Cart Login End-->
     </div>
   </div>
@@ -329,20 +334,7 @@
           </li>
         </ul>
       </div>
-      <div class="des_choice">
-        <span class="fl">Color：</span>
-        <ul>
-          <li>Red
-            <div class="ch_img"></div>
-          </li>
-          <li class="checked">White
-            <div class="ch_img"></div>
-          </li>
-          <li>Black
-            <div class="ch_img"></div>
-          </li>
-        </ul>
-      </div>
+
       <div class="des_share">
         <div class="d_sh">
           Share

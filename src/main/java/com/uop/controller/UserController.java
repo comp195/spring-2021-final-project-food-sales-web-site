@@ -23,7 +23,7 @@ public class UserController {
     @RequestMapping(value = "/register")
     public ModelAndView registerUser(User user){
         userService.registUser(user);
-        return new ModelAndView("success");
+        return new ModelAndView("index");
     }
 
     @RequestMapping(value = "/login")
