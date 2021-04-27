@@ -36,7 +36,7 @@ public class UserController {
             return new ModelAndView("admin_login");
         }else{
             ModelAndView modelAndView = new ModelAndView();
-            modelAndView.addObject("userName",userName);
+            modelAndView.addObject("user",userName);
             modelAndView.setViewName("index");
             return modelAndView;
         }

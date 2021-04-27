@@ -173,7 +173,7 @@
                 href="#">Women</a><a href="#">Men</a></span>
     </div>
     <div class="i_car">
-        <div class="car_t">Cart [ <span>3</span> ]</div>
+        <div class="car_t">Cart</div>
         <div class="car_bg">
             <!--Begin Cart not login Begin-->
             <div class="un_login">Not login！<a href="login.jsp" style="color:#ff4e00;">

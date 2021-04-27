@@ -155,7 +155,7 @@
         <span class="fl"><a href="#">Coffee</a><a href="#">Juice</a><a href="#">Fresh Food</a><a href="#">Cake</a><a href="#">Women</a><a href="#">Men</a></span>
     </div>
     <div class="i_car">
-        <div class="car_t">Cart [ <span>3</span> ]</div>
+        <div class="car_t">Cart</div>
         <div class="car_bg">
             <!--Begin Cart not login Begin-->
             <div class="un_login">Not login！<a href="Login.html" style="color:#ff4e00;">Login now</a> to Check Cart！</div>

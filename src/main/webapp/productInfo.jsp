@@ -418,7 +418,7 @@
           <div class="img"><a href="#"><img src="images/his_2.jpg" width="185" height="162"/></a></div>
           <div class="name"><a href="#">Dior</a></div>
           <div class="price">
-            <font>￥<span>768.00</span></font> &nbsp; 18R
+            <font>$<span>768.00</span></font> &nbsp; 18R
           </div>
         </li>
         <li>
@@ -456,7 +456,7 @@
           <div class="name"><a href="#">？？？</a></div>
           <div class="price">
             <div class="checkbox"><input type="checkbox" name="zuhe" checked="checked"/></div>
-            <font>￥<span>768.00</span></font> &nbsp; 18R
+            <font>$<span>768.00</span></font> &nbsp; 18R
           </div>
         </div>
         <div class="team_icon"><img src="images/jia_b.gif"/></div>
@@ -465,7 +465,7 @@
           <div class="name"><a href="#">？？？</a></div>
           <div class="price">
             <div class="checkbox"><input type="checkbox" name="zuhe"/></div>
-            <font>￥<span>749.00</span></font> &nbsp; 18R
+            <font>$<span>749.00</span></font> &nbsp; 18R
           </div>
         </div>
         <div class="team_icon"><img src="images/jia_b.gif"/></div>
@@ -474,7 +474,7 @@
           <div class="name"><a href="#">？？？</a></div>
           <div class="price">
             <div class="checkbox"><input type="checkbox" name="zuhe" checked="checked"/></div>
-            <font>￥<span>749.00</span></font> &nbsp; 18R
+            <font>$<span>749.00</span></font> &nbsp; 18R
           </div>
         </div>
         <div class="team_icon"><img src="images/equl.gif"/></div>
