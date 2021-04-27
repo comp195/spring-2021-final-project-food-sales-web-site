@@ -182,7 +182,7 @@
                 <div class="img"><a href="#"><img src="img/${product.productFileName}" width="58"
                                                   height="58"/></a></div>
                 <div class="name"><a href="#">${product.productName}</a></div>
-                <div class="price"><font color="#ff4e00">￥${product.productPrice}</font>
+                <div class="price"><font color="#ff4e00">$${product.productPrice}</font>
                   X ${orderProduct.productCount}</div>
               </li>
               <c:set var="result" value="${result+orderProduct.productCost*orderProduct.productCount}"/>

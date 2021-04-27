@@ -284,7 +284,7 @@
     }
 
     function queryByCondition() {
-        var parentId = document.getElementById("parentId").value
+        var parentId = document.getElementById("parentId").value;
         $("form").attr("action","categoryPage?parentId=" + parentId);
         // location.href = "/ebuy/category?parentId=" + parentId;
     }

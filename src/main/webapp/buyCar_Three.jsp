@@ -270,7 +270,7 @@
               </tr>
               <tr>
                 <td style="font-size:14px; font-family:'宋体'; padding:10px 0 20px 0; border-bottom:1px solid #b6b6b6;">
-                	Your delivery method: <font color="#ff4e00">UPS</font>； &nbsp; &nbsp;Payment method: <font color="#ff4e00">Bank transferring</font>； &nbsp; &nbsp;Your total payment: <font color="#ff4e00">￥${resultPrice}</font>
+                	Your delivery method: <font color="#ff4e00">UPS</font>； &nbsp; &nbsp;Payment method: <font color="#ff4e00">Bank transferring</font>； &nbsp; &nbsp;Your total payment: <font color="#ff4e00">$${resultPrice}</font>
                 </td>
               </tr>
               <tr>
@@ -297,7 +297,7 @@
               </tr>
               <tr>
                 <td style="font-size:14px; font-family:'宋体'; padding:10px 0 20px 0; border-bottom:1px solid #b6b6b6;">
-                    Your delivery method: <font color="#ff4e00">UPS</font>； &nbsp; &nbsp;Payment method: <font color="#ff4e00">Alipay</font>； &nbsp; &nbsp;Your total payment: <font color="#ff4e00">￥${resultPrice}</font>
+                    Your delivery method: <font color="#ff4e00">UPS</font>； &nbsp; &nbsp;Payment method: <font color="#ff4e00">Alipay</font>； &nbsp; &nbsp;Your total payment: <font color="#ff4e00">$${resultPrice}</font>
                 </td>
               </tr>
               <tr>

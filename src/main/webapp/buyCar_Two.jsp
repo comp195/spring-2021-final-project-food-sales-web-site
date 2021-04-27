@@ -283,9 +283,9 @@
                                     <div class="c_s_img"><img src="img/${product.productFileName}" width="73" height="73"/></div>
                                         ${product.productName}
                                 </td>
-                                <td align="center">Color：Grey</td>
+                                <td align="center"></td>
                                 <td align="center">${orderProduct.productCount}</td>
-                                <td align="center" style="color:#ff4e00;">￥${orderProduct.productCost*orderProduct.productCount}</td>
+                                <td align="center" style="color:#ff4e00;">$${orderProduct.productCost*orderProduct.productCount}</td>
                             </tr>
                             <c:set var="result" value="${result+orderProduct.productCost*orderProduct.productCount}"/>
 
@@ -482,7 +482,7 @@
               </tr>
               <tr height="70">
                 <td align="right">
-                	<b style="font-size:14px;">Total charge：<span style="font-size:22px; color:#ff4e00;">￥${result+15}</span></b>
+                	<b style="font-size:14px;">Total charge：<span style="font-size:22px; color:#ff4e00;">$${result+15}</span></b>
                 </td>
               </tr>
               <tr height="70">

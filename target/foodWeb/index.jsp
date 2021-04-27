@@ -176,7 +176,7 @@
         <div class="car_t">Cart</div>
         <div class="car_bg">
             <!--Begin Cart not login Begin-->
-            <div class="un_login">Not login！<a href="login.jsp" style="color:#ff4e00;">
+            <div class="un_login"> <a href="login.jsp" style="color:#ff4e00;">
                 <c:if test="${user == null}">Login now</c:if>
                 <c:if test="${user != null}">${user}</c:if>
             </a> to Check Cart！
@@ -192,7 +192,7 @@
                                 <div class="img"><a href="#"><img src="img/${product.productFileName}" width="58"
                                                                   height="58"/></a></div>
                                 <div class="name"><a href="#">${product.productName}</a></div>
-                                <div class="price"><font color="#ff4e00">￥${product.productPrice}</font>
+                                <div class="price"><font color="#ff4e00">$${product.productPrice}</font>
                                     X ${orderProduct.productCount}</div>
                             </li>
                             <c:set var="result" value="${result + product.productPrice*orderProduct.productCount}"/>
@@ -200,7 +200,7 @@
                     </c:forEach>
                 </c:forEach>
             </ul>
-            <div class="price_sum">Total&nbsp; <font color="#ff4e00">￥</font><span>${result}</span></div>
+            <div class="price_sum">Total&nbsp; <font color="#ff4e00">$</font><span>${result}</span></div>
             <div class="price_a"><a href="#">Place the Order</a></div>
             <!--End Cart Login End-->
         </div>
@@ -324,7 +324,7 @@
                                                             height="136"/></a>
                                                 </div>
                                                 <div class="price">
-                                                    <font>￥<span>${product.productPrice}</span></font>
+                                                    <font>$<span>${product.productPrice}</span></font>
                                                     &nbsp; ${product.productStock}R
                                                 </div>
                                             </div>
@@ -373,7 +373,7 @@
                                     src="img/${product.productFileName}" width="242" height="356"/></a>
                             </div>
                         </c:if>
-                        <div class="s_price">￥<span>${product.productPrice}</span></div>
+                        <div class="s_price">$<span>${product.productPrice}</span></div>
                         <div class="s_name">
                             <h2><a href="product?productId=${product.productId}">${product.productName}</a></h2>
                             Count down：<span>1200</span> H <span>30</span> Min <span>28</span> Sec
@@ -435,7 +435,7 @@
                                                     href="product?productId=${product.productId}">${product.productName}</a>
                                             </div>
                                             <div class="price">
-                                                <font>￥<span>${product.productPrice}</span></font>
+                                                <font>$<span>${product.productPrice}</span></font>
                                                 &nbsp; ${product.productStock}R
                                             </div>
                                             <div class="img"><a href="product?productId=${product.productId}"><img

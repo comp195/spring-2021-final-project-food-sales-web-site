@@ -161,7 +161,7 @@
         <div class="car_bg">
             <!--Begin Cart not login Begin-->
             <div class="un_login"><a href="login.jsp" style="color:#ff4e00;">
-                <c:if test="${user == null}">Not login！ Login now</c:if>
+                <c:if test="${user == null}"> Login now</c:if>
                     <c:if test="${user != null}">${user}</c:if>
                   </a> to Check Cart！</div>
             <!--End Cart not log in End-->
@@ -175,7 +175,7 @@
                                 <div class="img"><a href="#"><img src="img/${product.productFileName}" width="58"
                                                                   height="58"/></a></div>
                                 <div class="name"><a href="#">${product.productName}</a></div>
-                                <div class="price"><font color="#ff4e00">￥${product.productPrice}</font>
+                                <div class="price"><font color="#ff4e00">$${product.productPrice}</font>
                                     X ${orderProduct.productCount}</div>
                             </li>
                             <c:set var="result" value="${result+orderProduct.productCost*orderProduct.productCount}"/>
@@ -287,7 +287,7 @@
                                 <div class="c_s_img"><img src="img/${product.productFileName}" width="73" height="73"/></div>
                                 ${product.productName}
                             </td>
-                            <td align="center">Color：Grey</td>
+                            <td align="center"></td>
                             <td align="center">
 
                                 <div class="c_num">
@@ -298,7 +298,7 @@
                                 </div>
 
                             </td>
-                            <td align="center" style="color:#ff4e00;">￥${orderProduct.productCost*orderProduct.productCount}</td>
+                            <td align="center" style="color:#ff4e00;">$${orderProduct.productCost*orderProduct.productCount}</td>
                             <td align="center"><a onclick="ShowDiv('MyDiv','fade')">Delete</a>&nbsp; <br></br>&nbsp;<a href="#">Add Favorite</a></td>
                         </tr>
                         <script type="text/javascript">
