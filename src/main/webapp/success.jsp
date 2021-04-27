@@ -317,7 +317,7 @@
                                     <c:if test="${product.productIsHot == true}">
                                         <li class="featureBox">
                                             <div class="box">
-                                                <div class="h_icon"><img src="images/hot.jpeg" width="50" height="50"/></div>
+                                                <div class="h_icon"><img src="images/hot.png" width="50" height="50"/></div>
                                                 <div class="imgbg">
                                                     <a href="product?productId=${product.productId}"><img
                                                             src="img/${product.productFileName}" width="160"

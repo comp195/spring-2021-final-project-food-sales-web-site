@@ -317,7 +317,7 @@
                                     <c:if test="${product.productIsHot == true}">
                                         <li class="featureBox">
                                             <div class="box">
-                                                <div class="h_icon"><img src="images/hot.jpeg" width="50" height="50"/></div>
+                                                <div class="h_icon"><img src="images/hot.png" width="50" height="50"/></div>
                                                 <div class="imgbg">
                                                     <a href="product?productId=${product.productId}"><img
                                                             src="img/${product.productFileName}" width="160"
@@ -376,7 +376,7 @@
                         <div class="s_price">$<span>${product.productPrice}</span></div>
                         <div class="s_name">
                             <h2><a href="product?productId=${product.productId}">${product.productName}</a></h2>
-                            Count down：<span>1200</span> H <span>30</span> Min <span>28</span> Sec
+                            Count down：<span>20</span> H <span>30</span> Min <span>28</span> Sec
                         </div>
                     </div>
                     <c:set var="k" value="${k+1}"/>

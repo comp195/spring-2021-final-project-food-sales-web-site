@@ -290,21 +290,21 @@
         <div id="tsImgSArrL" onclick="tsScrollArrLeft()"></div>
         <div id="tsImgSCon">
           <ul>
-            <li onclick="showPic(0)" rel="MagicZoom" class="tsSelectImg"><img src="img/" tsImgS="img/"
+            <li onclick="showPic(0)" rel="MagicZoom" class="tsSelectImg"><img src="img/${product.productFileName}" tsImgS="img/${product.productFileName}"
                                                                               width="79" height="79"/></li>
-            <li onclick="showPic(1)" rel="MagicZoom"><img src="img/" tsImgS="ig/" width="79" height="79"/>
+            <li onclick="showPic(1)" rel="MagicZoom"><img src="img/${product.productFileName}" tsImgS="ig/" width="79" height="79"/>
             </li>
-            <li onclick="showPic(2)" rel="MagicZoom"><img src="img/" tsImgS="img/" width="79" height="79"/>
+            <li onclick="showPic(2)" rel="MagicZoom"><img src="img/${product.productFileName}" tsImgS="img/" width="79" height="79"/>
             </li>
-            <li onclick="showPic(3)" rel="MagicZoom"><img src="img/" tsImgS="img/" width="79" height="79"/>
+            <li onclick="showPic(3)" rel="MagicZoom"><img src="img/${product.productFileName}" tsImgS="img/" width="79" height="79"/>
             </li>
-            <li onclick="showPic(4)" rel="MagicZoom"><img src="img/" tsImgS="img/" width="79" height="79"/>
+            <li onclick="showPic(4)" rel="MagicZoom"><img src="img/${product.productFileName}" tsImgS="img/" width="79" height="79"/>
             </li>
-            <li onclick="showPic(5)" rel="MagicZoom"><img src="img/" tsImgS="img/" width="79" height="79"/>
+            <li onclick="showPic(5)" rel="MagicZoom"><img src="img/${product.productFileName}" tsImgS="img/" width="79" height="79"/>
             </li>
-            <li onclick="showPic(6)" rel="MagicZoom"><img src="img/" tsImgS="img/" width="79" height="79"/>
+            <li onclick="showPic(6)" rel="MagicZoom"><img src="img/${product.productFileName}" tsImgS="img/" width="79" height="79"/>
             </li>
-            <li onclick="showPic(7)" rel="MagicZoom"><img src="img/" tsImgS="img/" width="79" height="79"/>
+            <li onclick="showPic(7)" rel="MagicZoom"><img src="img/${product.productFileName}" tsImgS="img/" width="79" height="79"/>
             </li>
           </ul>
         </div>
@@ -318,21 +318,9 @@
         <p>${product.productName}</p>
       </div>
       <div class="des_price">
-        Price: <b>${product.productPrice}</b><br/>
+        Price: <b>$${product.productPrice}</b><br/>
       </div>
       <div class="des_choice">
-        <span class="fl">Size：</span>
-        <ul>
-          <li class="checked">30ml
-            <div class="ch_img"></div>
-          </li>
-          <li>50ml
-            <div class="ch_img"></div>
-          </li>
-          <li>100ml
-            <div class="ch_img"></div>
-          </li>
-        </ul>
       </div>
 
       <div class="des_share">
@@ -356,8 +344,7 @@
             <input type="button" value="" onclick="jianUpdate(jq(this));" class="n_btn_2"/>
           </div>
           <span class="fl">
-            <a id="jumpBuyCar"><img
-                  src="images/j_car.png"/>
+            <a id="jumpBuyCar"><img src="images/j_car.png"/>
             </a>
           </span>
 
@@ -371,10 +358,7 @@
         </form>
       </div>
     </div>
-    <div class="s_brand">
-      <div class="s_brand_img"><img src="" width="188" height="132"/></div>
-      <div class="s_brand_c"><a href="#">Enter this brand</a></div>
-    </div>
+
     </c:if>
     </c:forEach>
   </div>
