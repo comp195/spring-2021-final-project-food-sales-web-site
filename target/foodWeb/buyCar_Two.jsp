@@ -143,6 +143,7 @@
             </span>
             <span class="fl">|&nbsp;Follow us：</span>
             <span class="s_sh"><a href="#" class="sh1">Twitter</a><a href="#" class="sh2">Facabook</a></span>
+        </span>
     </div>
 </div>
 <div class="top">
@@ -256,7 +257,7 @@
 <!--End Menu End-->
 <div class="i_bg">  
     <div class="content mar_20">
-    	<img src="images/img2.jpg" />        
+
     </div>
     
     <!--Begin Second step: Confirm order Begin -->

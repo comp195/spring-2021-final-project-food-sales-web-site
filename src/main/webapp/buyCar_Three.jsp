@@ -254,7 +254,6 @@
 <!--End Menu End-->
 <div class="i_bg">  
     <div class="content mar_20">
-    	<img src="images/img3.jpg" />        
     </div>
     
     <!--Begin Third step: Place order Begin -->
