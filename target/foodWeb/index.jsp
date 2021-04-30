@@ -463,7 +463,7 @@
     </c:forEach>
 
     <div class="content mar_20">
-        <img src="images/mban_1.jpg" width="1200" height="110"/>
+        <img src="images/mban_1.jpg" width="500" height="110"/>
     </div>
 
     <div class="i_t mar_10">

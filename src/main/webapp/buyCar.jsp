@@ -264,7 +264,7 @@
 <!--End Menu End-->
 <div class="i_bg">
     <div class="content mar_20">
-        <img src="images/img1.jpg"/>
+
     </div>
 
     <!--Begin First step: Check cart Begin -->
