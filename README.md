@@ -12,10 +12,6 @@ Front-end : HTML, CSS design, Javascript, XML
 Back-end： controller mapper model service  
 Database  
 
-Special notes as needed：  
-Completed:
-  Mapper, Database    
-        
-Still working on the rest of content！！  
-More details in Wiki page.  
+Special notes:
+The project have finished! Look more details in Wiki page
 Thanks!
